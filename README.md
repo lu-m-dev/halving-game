@@ -1,8 +1,11 @@
-## Halving Game
+# Halving Game
 - Simple number game involving two players
 - Game starts with a number (positive integer)
 - Two players take turns to either _subtract 1_ or _divide by 2_
 - Whoever reduces the number to zero wins
+
+## Game Demo
+<img src="./demo.gif" alt="game demo" style="width: 80%; height: auto; display: block; margin: auto;"/>
 
 ## Tech Specs
 - Minimal implementation

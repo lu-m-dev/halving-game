@@ -20,7 +20,7 @@
     <body>
         <h1>Halving Game</h1>
         <div id="n"></div>
-        <div id="message"></div>
+        <div id="message">Game start</div>
         <button id="button1" onclick="playerMove(1)">Subtract 1</button>
         <button id="button2" onclick="playerMove(2)">Divide by 2</button>
         <script>
@@ -31,6 +31,11 @@
                     let prevNum = n;
                     n = (option === 1) ? action1(n) : action2(n);
                     let message = player + ": " + prevNum + " -> " + n;
+                    if (n === 0) {
+                        message += " -- " + player + " won!";
+                        document.getElementById("button1").disabled = true;
+                        document.getElementById("button2").disabled = true;
+                    }
                     document.getElementById("message").textContent = message;
                 }
                 document.getElementById("n").textContent = n;
@@ -41,7 +46,7 @@
 
             function playerMove(option) {
                 update(option, "Player");
-                setTimeout(aiMove, 1000);
+                setTimeout(aiMove, 500);
             }
 
             function aiMove() {
